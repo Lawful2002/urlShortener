@@ -42,3 +42,60 @@ h2{
     font-family: cursive;
     color:aliceblue;
 }
+
+.user{
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    color:aliceblue;
+}
+
+.item{
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(180, 220, 255);
+    border-radius: 20px;    
+    border: black solid 0.2rem;
+}
+
+.link{
+    flex-grow: 1;
+    max-width: 40%;
+    padding: 0.75rem 0;
+}
+
+.sep{
+    height: 100%;
+    width: 0.2rem;
+    background-color: black;
+}
+
+.header{
+    width: 100%;
+    height: 3rem;
+}
+
+.top{
+    font-family: cursive;
+    font-size: 2rem;
+    color:aliceblue;
+}
+
+.logo, .logo:hover{
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color:aliceblue;
+    text-decoration: none;
+}
+
+.new{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    color:aliceblue;
+}
+
+.back{
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    margin-top: 2rem;
+}

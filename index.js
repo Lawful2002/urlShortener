@@ -20,11 +20,26 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 
 app.get("/", (req, res)=>{    
-    res.render("home", {page: "Home"});
+    res.render("home");
 })
 
-app.get("/new", (req, res)=>{
-    res.render("create", {page: "Shorten A Link"});
+app.get("/user/", (req, res)=>{
+    const {user} = req.query;     
+    res.redirect(`/user/${user}`);
+})
+
+app.get("/user/:user", async (req, res)=>{
+
+    const {user} = req.params;
+
+    try{
+        const data = await link.find({username: user});
+        console.log(data);
+        res.render("user", {data, user});
+    }
+    catch(e){
+        res.send(e);
+    }
 })
 
 app.get("/:id", async (req, res)=>{
@@ -40,30 +55,20 @@ app.get("/:id", async (req, res)=>{
 
 })
 
-app.post("/new", async (req, res) =>{
+app.post("/", async (req, res) =>{
 
-    const {url} = req.body;
+    const {url, username} = req.body;
+    res.locals.query = {user: username}
 
     if(!url){
-        res.redirect("/new");
+        res.redirect("/");
     }
-
-    try {
-        const foundLink = await link.findOne({redirectTo: url});
-
-        if(foundLink){
-            res.send(foundLink);
-        }
-        else{
-            try{
-                const newLink = new link({shortenedLink: nanoid(10), redirectTo: url, dateCreated: new Date()});
-                await newLink.save();
-                res.redirect("/");
-            } catch (e) {res.send(e)}
-        }
-
+    try{
+        const newLink = new link({shortenedLink: nanoid(10), redirectTo: url, dateCreated: new Date(), username: username});
+        await newLink.save();
+        res.redirect(`/user/${username}`);
     } catch (e) {res.send(e)}
-
+    
 })
 
 

@@ -1,8 +1,8 @@
-<form method="post" class="needs-validation" novalidate autocomplete="off">
+<form method="post" class="needs-validation" novalidate>
     <div class="row gx-6 mb-3 align-items-center">
         <div class="col-6 ">
             <label for="link" class="form-label">Link</label>
-            <input type="url" name="url" id="link" class="form-control" placeholder="https://example.com" required autofocus>        
+            <input type="url" name="url" id="link" class="form-control" autocomplete="off" placeholder="https://example.com" required autofocus>        
             <div class="form-text">Enter the link to be shortened</div>                      
         </div>    
 
@@ -10,7 +10,7 @@
             <label class="form-label" for="username">Username</label>
             <div class="input-group">
                 <div class="input-group-text">@</div>
-                <input type="text" class="form-control" id="username" placeholder="Username" required>                
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>                
             </div>
             <div class="form-text">Enter a Username (to access your links)</div>
         </div>  
