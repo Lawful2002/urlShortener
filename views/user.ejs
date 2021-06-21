@@ -1,0 +1,28 @@
+<%- layout("layouts/boilerplate") %> 
+
+<%- include("partials/nav") %> 
+
+<div class="row gy-3">
+    <div class="user col-12 mb-5 text-center"><%= user %> </div>
+    
+    <div class="d-flex justify-content-around col-8 my-2 header">
+        <span class="top text-center">Original Link </span>        
+        <span class="top text-center">Shortened Link </span>
+    </div>
+
+    <% for(let x of data) { %> 
+        <div class="d-flex justify-content-around item col-8 my-2">
+            <span class="link text-center"><a class="link-success" href="<%= x.redirectTo %>"><%= x.redirectTo %></a></span>
+            <span class="sep"></span>
+            <span class="link text-center"> <a class="link-success" href="http://localhost:3000/<%= x.shortenedLink %>">http://localhost:3000/<%= x.shortenedLink %></a> </span>
+        </div>
+    <% } %> 
+
+    <div class="col-12 new mt-5 text-center">
+        <a href="/"><button class="btn btn-primary btn-lg px-4 back">Back to Home Page</button></a>
+    </div>
+
+</div>
+
+
+

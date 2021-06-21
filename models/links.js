@@ -9,16 +9,16 @@ const linksSchema = new Schema ({
     },
     redirectTo: {
         type: String,
-        required: true,
-        unique: true
+        required: true,        
     },
     dateCreated: {
         type: Date,
         required: true
+    },
+    username: {
+        type: String,
+        required: true
     }
 });
-
-// linksSchema.index({shortenedLink: 1, redirectTo: 1});
-
 
 module.exports = mongoose.model('link', linksSchema);
