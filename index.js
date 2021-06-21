@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const { nanoid } = require('nanoid')
 const link = require("./models/links");
+const engine = require('ejs-mate');
 
 const app = express();
 mongoose.connect('mongodb://localhost:27017/shortenedLinks', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true})
@@ -11,6 +12,7 @@ mongoose.connect('mongodb://localhost:27017/shortenedLinks', {useNewUrlParser: t
 
 
 app.set('views', path.join(__dirname, 'views'));
+app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({extended: true}));

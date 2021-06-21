@@ -1,8 +1,26 @@
-<%- include('partials/head') %>
+<%- layout("layouts/boilerplate") %> 
 
-<%- include('partials/nav') %> 
+<div class="row gy-3">
+    <div class="title col-12">
+        BitAccess
+    </div>
+    <div class="motto col-6">
+        A simple and hassle-free link shortener.
+    </div>
+    <div class="feat col-12">
+        *No registration required.
+    </div>
 
-<h1>BitAccess</h1>
-<span>A simple and hassle free URL shortener</span>
+    <div class="col">
+        <botton class="btn btn-primary btn-lg show px-4">Get Started</botton>
+    </div>
 
-<%- include('partials/footer') %>
+</div>
+
+
+<div class="visually-hidden mt-5 create">
+    <h2 class="mb-4">Shorten A Link</h2>
+    <%- include("partials/create") %>     
+    <h2 class="mt-5 mb-4">See Your Links</h2>
+    <%- include("partials/find") %>
+</div>
