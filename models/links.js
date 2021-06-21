@@ -4,8 +4,7 @@ const Schema = mongoose.Schema;
 const linksSchema = new Schema ({
     shortenedLink: {
         type: String,
-        required: true,
-        unique: true
+        required: true,        
     },
     redirectTo: {
         type: String,
