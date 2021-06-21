@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Lawful2002/urlShrtener#readme",
   "dependencies": {
     "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
     "flash": "^1.1.0",
     "mongoose": "^5.12.14",
