@@ -6,19 +6,19 @@ body{
 
 .title{
     font-family: 'Pacifico', cursive;
-    font-size: 10rem;
+    font-size: 10em;
     letter-spacing: 3px;
     color:aliceblue;     
 }
 
 .motto {    
     font-family: cursive;
-    font-size: 4rem;
+    font-size: 4em;
     color:rgba(211, 219, 226);
 }
 
 .feat {
-    font-size: 1rem;
+    font-size: 1em;
     font-style: italic;
     color:rgba(255, 255, 255, 0.7)
 }
