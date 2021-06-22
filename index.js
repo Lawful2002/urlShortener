@@ -4,10 +4,10 @@ const path = require("path");
 const { nanoid } = require('nanoid')
 const link = require("./models/links");
 const engine = require('ejs-mate');
-const flash = require('connect-flash')
+const url = require('url');
 
 const app = express();
-mongoose.connect('mongodb://localhost:27017/shortenedLinks', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true})
+mongoose.connect('mongodb://localhost:27017/shortenedLinks', {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log("db connection success"))
     .catch(() => console.log(" db connection error"))
 
@@ -15,8 +15,6 @@ mongoose.connect('mongodb://localhost:27017/shortenedLinks', {useNewUrlParser: t
 app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', engine);
 app.set('view engine', 'ejs');
-
-app.use(flash());
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')))
@@ -34,6 +32,7 @@ app.get("/user/", (req, res)=>{
 app.get("/user/:user", async (req, res)=>{
 
     const {user} = req.params;
+    const domain = req.protocol + '://' + req.get('host');   
 
     try
     {
@@ -41,7 +40,7 @@ app.get("/user/:user", async (req, res)=>{
         if(userExists){
             try{
                 const data = await link.find({username: user});                
-                res.render("user", {data, user});
+                res.render("user", {data, user, domain});
             }
             catch(e){
                 res.render("err");

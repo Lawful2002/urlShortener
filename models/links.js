@@ -13,8 +13,6 @@ const linksSchema = new Schema ({
     dateCreated: {
         type: Date,
         required: true,
-        expires:864000,
-        default: Date.now
     },
     username: {
         type: String,
