@@ -1,21 +1,19 @@
 body{    
     font-family: 'Roboto', sans-serif;
-    background: #005C97;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #363795, #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    background-image: url("../assets/bck.jpg");    
+    background-size:auto;
 }
 
 .title{
     font-family: 'Pacifico', cursive;
-    font-size: 9rem;
+    font-size: 10rem;
     letter-spacing: 3px;
-    color:aliceblue;
+    color:aliceblue;     
 }
 
 .motto {    
     font-family: cursive;
-    font-size: 3rem;
+    font-size: 4rem;
     color:rgba(211, 219, 226);
 }
 
@@ -99,4 +97,10 @@ h2{
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
     margin-top: 2rem;
+}
+
+@media screen and (max-width:992px) {    
+    .form-text, .form-label{
+        display: none;
+    }    
 }
