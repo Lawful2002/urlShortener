@@ -1,4 +1,4 @@
-# urlShrtener
+# urlShortener
 A basic URL shortener 
 
 ## How to install on local device:
