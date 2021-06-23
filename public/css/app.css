@@ -1,19 +1,19 @@
 body{    
     font-family: 'Roboto', sans-serif;
     background-image: url("../assets/bck.jpg");    
-    background-size:auto;
+    background-size:auto;    
 }
 
 .title{
     font-family: 'Pacifico', cursive;
-    font-size: 10em;
+    font-size: 15vw;    
     letter-spacing: 3px;
     color:aliceblue;     
 }
 
 .motto {    
     font-family: cursive;
-    font-size: 4em;
+    font-size: 3em;
     color:rgba(211, 219, 226);
 }
 
@@ -24,6 +24,8 @@ body{
 }
 
 .show{
+    color: aliceblue;
+    font-size: 1em;
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
     margin-top: 2rem;    
@@ -58,8 +60,8 @@ h2{
 .link{
     flex-grow: 1;
     max-width: 40%;
-    padding: 0.75rem 0;
-    overflow: hidden;
+    padding: 0.75rem 0;   
+    word-wrap: break-word; 
 }
 
 .sep{
@@ -94,13 +96,14 @@ h2{
 }
 
 .back{
+    color: aliceblue;
+    font-size: 0.5em;
     font-family: 'Roboto', sans-serif;
     border-radius: 10px;
-    margin-top: 2rem;
+    margin-top: 2rem;       
 }
 
+
 @media screen and (max-width:992px) {    
-    .form-text, .form-label{
-        display: none;
-    }    
+       
 }
